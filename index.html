@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="专注管理器">
+    <meta name="application-name" content="专注管理器">
+    <meta name="theme-color" content="#667eea">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <title>90分钟专注管理器</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- PWA相关 -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwKSIvPgo8ZGVmcz4KPHN2ZzpzdHlsZT4KICAgICNnZW50dXNfMm1pbnt7Y3g6OTY7Y3k6OTY7cjo2NDtmaWxsOndoaXRlO29wYWNpdHk6MC44O319Cjwvc3ZnOnN0eWxlPgo8Y2lyY2xlIGlkPSJnZW50dXNfMm1pbiIgY3g9Ijk2IiBjeT0iOTYiIHI9IjY0IiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjgiLz4KPGJ4aXN0IGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSIgaWQ9ImdyYWRpZW50MCI+CjxzdG9wIHN0b3AtY29sb3I9IiM2NjdlZWEiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNzY0YmEyIi8+Cjwvb2lua2VudEdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPg==">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwKSIvPgo8ZGVmcz4KPHN2ZzpzdHlsZT4KICAgICNnZW50dXNfMm1pbnt7Y3g6OTY7Y3k6OTY7cjo2NDtmaWxsOndoaXRlO29wYWNpdHk6MC44O319Cjwvc3ZnOnN0eWxlPgo8Y2lyY2xlIGlkPSJnZW50dXNfMm1pbiIgY3g9Ijk2IiBjeT0iOTYiIHI9IjY0IiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjgiLz4KPGJ4aXN0IGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSIgaWQ9ImdyYWRpZW50MCI+CjxzdG9wIHN0b3AtY29sb3I9IiM2NjdlZWEiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNzY0YmEyIi8+Cjwvb2lua2VudEdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPg==">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-brain"></i> 90分钟专注管理器</h1>
+            <p class="subtitle">基于神经重放原理的专注训练系统</p>
+        </header>
+
+        <main>
+            <div class="timer-section">
+                <div class="main-timer">
+                    <div class="timer-display">
+                        <span id="timer">90:00</span>
+                    </div>
+                    <div class="timer-label">专注时间</div>
+                </div>
+
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-primary">
+                        <i class="fas fa-play"></i> 开始专注
+                    </button>
+                    <button id="pauseBtn" class="btn btn-secondary" disabled>
+                        <i class="fas fa-pause"></i> 暂停
+                    </button>
+                    <button id="resetBtn" class="btn btn-danger">
+                        <i class="fas fa-stop"></i> 重置
+                    </button>
+                </div>
+            </div>
+
+            <div class="status-section">
+                <div class="status-card">
+                    <h3><i class="fas fa-eye"></i> 休息状态</h3>
+                    <div id="restStatus" class="status-display">等待开始...</div>
+                    <div class="rest-timer">
+                        <span id="restTimer">10</span>s
+                    </div>
+                </div>                <div class="status-card">
+                    <h3><i class="fas fa-bell"></i> 提示音</h3>
+                    <div id="soundStatus" class="status-display">随机模式</div>
+                    <div class="sound-controls">
+                        <button id="soundConfigBtn" class="btn btn-config">
+                            <i class="fas fa-cog"></i> 音效设置
+                        </button>
+                    </div>
+                    <div class="next-sound" id="nextSoundContainer" style="display: none;">
+                        下次: <span id="nextSound">--</span>
+                        <button id="toggleNextTimeBtn" class="btn-toggle" title="显示/隐藏下次时间">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <span>专注进度</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-number" id="todayFocus">0</div>
+                    <div class="stat-label">今日专注次数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalTime">0</div>
+                    <div class="stat-label">累计专注时间(分钟)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="restCount">0</div>
+                    <div class="stat-label">休息次数</div>
+                </div>
+            </div>            <div class="tips-section">
+                <h3><i class="fas fa-lightbulb"></i> 专注小贴士</h3>
+                <div class="tip-card">
+                    <h4>为什么90分钟？</h4>
+                    <p>基于大脑工作原理，研究表明大脑一次最大可以工作90分钟。这个时长能最大化专注效果。</p>
+                </div>
+                <div class="tip-card">
+                    <h4>神经重放原理</h4>
+                    <p>就算只是闭眼休息10秒，大脑都会出现显著且快速的神经重放，速度比实际练习时快20倍。</p>
+                </div>
+                <div class="tip-card">
+                    <h4>随机提示音的作用</h4>
+                    <p>通过变比率强化，随机的提示音比固定的更容易让人持续专注，形成良好的行为习惯。</p>
+                </div>
+                <div class="tip-card mobile-tip" style="display: none;">
+                    <h4><i class="fas fa-mobile-alt"></i> 移动端使用技巧</h4>
+                    <p>• 向上滑动屏幕开始专注<br>• 向下滑动暂停或重置<br>• 长按计时器显示快捷菜单<br>• 建议将应用添加到主屏幕</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- 配置模态框 -->
+        <div id="configModal" class="modal">
+            <div class="modal-content config-modal">
+                <div class="modal-header">
+                    <h2><i class="fas fa-cog"></i> 配置设置</h2>
+                    <button id="closeConfigBtn" class="btn-close">&times;</button>
+                </div>
+                
+                <div class="config-section">
+                    <h3><i class="fas fa-volume-up"></i> 音效设置</h3>
+                    <div class="sound-options">
+                        <div class="sound-option">
+                            <input type="radio" id="sound-bell" name="soundType" value="bell" checked>
+                            <label for="sound-bell">
+                                <i class="fas fa-bell"></i> 经典铃声
+                                <button class="btn-preview" data-sound="bell">试听</button>
+                            </label>
+                        </div>
+                        <div class="sound-option">
+                            <input type="radio" id="sound-chime" name="soundType" value="chime">
+                            <label for="sound-chime">
+                                <i class="fas fa-music"></i> 柔和钟声
+                                <button class="btn-preview" data-sound="chime">试听</button>
+                            </label>
+                        </div>
+                        <div class="sound-option">
+                            <input type="radio" id="sound-beep" name="soundType" value="beep">
+                            <label for="sound-beep">
+                                <i class="fas fa-signal"></i> 简单提示音
+                                <button class="btn-preview" data-sound="beep">试听</button>
+                            </label>
+                        </div>
+                        <div class="sound-option">
+                            <input type="radio" id="sound-nature" name="soundType" value="nature">
+                            <label for="sound-nature">
+                                <i class="fas fa-leaf"></i> 自然音效
+                                <button class="btn-preview" data-sound="nature">试听</button>
+                            </label>
+                        </div>
+                        <div class="sound-option">
+                            <input type="radio" id="sound-zen" name="soundType" value="zen">
+                            <label for="sound-zen">
+                                <i class="fas fa-yin-yang"></i> 禅音
+                                <button class="btn-preview" data-sound="zen">试听</button>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="volume-control">
+                        <label for="volumeSlider">
+                            <i class="fas fa-volume-down"></i> 音量: <span id="volumeValue">70%</span>
+                        </label>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3><i class="fas fa-clock"></i> 显示设置</h3>
+                    <div class="display-options">
+                        <div class="option-item">
+                            <label class="switch">
+                                <input type="checkbox" id="showNextTime" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span class="option-label">显示下次提示音时间</span>
+                        </div>
+                        <div class="option-item">
+                            <label class="switch">
+                                <input type="checkbox" id="enableVibration" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span class="option-label">启用振动反馈（移动端）</span>
+                        </div>
+                        <div class="option-item">
+                            <label class="switch">
+                                <input type="checkbox" id="enableNotifications">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="option-label">启用浏览器通知</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3><i class="fas fa-palette"></i> 主题设置</h3>
+                    <div class="theme-options">
+                        <div class="theme-option" data-theme="default">
+                            <div class="theme-preview default-theme"></div>
+                            <span>默认蓝紫</span>
+                        </div>
+                        <div class="theme-option" data-theme="green">
+                            <div class="theme-preview green-theme"></div>
+                            <span>自然绿色</span>
+                        </div>
+                        <div class="theme-option" data-theme="orange">
+                            <div class="theme-preview orange-theme"></div>
+                            <span>活力橙色</span>
+                        </div>
+                        <div class="theme-option" data-theme="dark">
+                            <div class="theme-preview dark-theme"></div>
+                            <span>深色模式</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-actions">
+                    <button id="resetConfigBtn" class="btn btn-secondary">
+                        <i class="fas fa-undo"></i> 恢复默认
+                    </button>
+                    <button id="saveConfigBtn" class="btn btn-primary">
+                        <i class="fas fa-save"></i> 保存设置
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 休息模态框 -->
+        <div id="restModal" class="modal">
+            <div class="modal-content">
+                <h2><i class="fas fa-eye-slash"></i> 眯眼休息时间</h2>
+                <p>请闭眼休息10秒钟，让大脑进行神经重放</p>
+                <div class="rest-countdown">
+                    <span id="restCountdown">10</span>
+                </div>
+                <div class="rest-progress">
+                    <div id="restProgress" class="rest-progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 完成模态框 -->
+        <div id="completeModal" class="modal">
+            <div class="modal-content">
+                <h2><i class="fas fa-trophy"></i> 专注完成！</h2>
+                <p>恭喜您完成了90分钟的专注训练</p>
+                <p>现在可以休息20分钟，记得补充钠钾离子</p>
+                <div class="complete-stats">
+                    <div>休息次数: <span id="finalRestCount">0</span></div>
+                    <div>专注效率: <span id="efficiency">100%</span></div>
+                </div>
+                <button id="startBreakBtn" class="btn btn-success">
+                    <i class="fas fa-coffee"></i> 开始20分钟休息
+                </button>
+                <button id="closeCompleteBtn" class="btn btn-secondary">
+                    <i class="fas fa-times"></i> 关闭
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bellSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmAUDFGt5/S3ay" preload="auto"></source>
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

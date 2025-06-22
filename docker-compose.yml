@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  focus-manager:
+    build: .
+    container_name: focus-manager
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    volumes:
+      # 挂载日志目录
+      - ./logs:/var/log/nginx
+    environment:
+      - TZ=Asia/Shanghai
+      - NGINX_WORKER_PROCESSES=auto
+      - NGINX_WORKER_CONNECTIONS=1024
+    networks:
+      - focus-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.1'
+          memory: 64M
+
+  # 可选：添加SSL终止代理
+  ssl-proxy:
+    image: nginx:alpine
+    container_name: focus-manager-ssl
+    ports:
+      - "443:443"
+    restart: unless-stopped
+    volumes:
+      - ./ssl/nginx-ssl.conf:/etc/nginx/conf.d/default.conf
+      - ./ssl/certs:/etc/ssl/certs
+      - ./logs:/var/log/nginx
+    depends_on:
+      focus-manager:
+        condition: service_healthy
+    networks:
+      - focus-network
+    profiles:
+      - ssl
+
+networks:
+  focus-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

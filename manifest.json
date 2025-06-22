@@ -1,0 +1,40 @@
+{
+  "name": "90分钟专注管理器",
+  "short_name": "专注管理器",
+  "description": "基于神经重放原理的专注训练系统",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "lifestyle", "education"],
+  "lang": "zh-CN",
+  "scope": "./",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwKSIvPgo8cGF0aCBkPSJNOTYgNDhDMTIyLjUxIDQ4IDE0NCA2OS40OSAxNDQgOTZTMTIyLjUxIDE0NCA5NiAxNDQgNDggMTIyLjUxIDQ4IDk2IDY5LjQ5IDQ4IDk2IDQ4WiIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0eT0iMC44Ii8+CjxwYXRoIGQ9Ik05NiA2NEMxMTMuNjcgNjQgMTI4IDc4LjMzIDEyOCA5NlMxMTMuNjcgMTI4IDk2IDEyOCA2NCA1My42NyA2NCA5NiA3OC4zMyA2NCA5NiA2NFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuNiIvPgo8Y2lyY2xlIGN4PSI5NiIgY3k9Ijk2IiByPSIxMiIgZmlsbD0id2hpdGUiLz4KPGJ4aXN0IGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSIgaWQ9ImdyYWRpZW50MCI+CjxzdG9wIHN0b3AtY29sb3I9IiM2NjdlZWEiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNzY0YmEyIi8+Cjwvb2lua2VudEdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPg==",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9InVybCgjZ3JhZGllbnQwKSIvPgo8cGF0aCBkPSJNMjU2IDEyOEMzMjcuNjggMTI4IDM4NCAyOTQuMzIgMzg0IDI1NlMzMjcuNjggMzg0IDI1NiAzODQgMTI4IDMyNy42OCAxMjggMjU2IDE5NC4zMiAxMjggMjU2IDEyOFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgo8cGF0aCBkPSJNMjU2IDE2MEMzMDUuMjUgMTYwIDM1MiAyMDYuNzUgMzUyIDI1NlMzMDUuMjUgMzUyIDI1NiAzNTIgMTYwIDMwNS4yNSAxNjAgMjU2IDIwNi43NSAxNjAgMjU2IDE2MFoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuNiIvPgo8Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjMyIiBmaWxsPSJ3aGl0ZSIvPgo8ZGVmcz4KPHN2ZzpzdHlsZT4KICAgICNnZW50dXNfMm1pbnt7Y3g6MjU2O2N5OjI1NjtyOjE3MTtmaWxsOndoaXRlO29wYWNpdHk6MC44O319Cjwvc3ZnOnN0eWxlPgo8Y2lyY2xlIGlkPSJnZW50dXNfMm1pbiIgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTcxIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjgiLz4KPGJ4aXN0IGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSIgaWQ9ImdyYWRpZW50MCI+CjxzdG9wIHN0b3AtY29sb3I9IiM2NjdlZWEiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNzY0YmEyIi8+Cjwvb2lua2VudEdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPg==",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "开始专注",
+      "short_name": "专注",
+      "description": "立即开始90分钟专注会话",
+      "url": "./index.html?action=start",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQ4IDhDNzAuMDkxNCA4IDg4IDI1LjkwODYgODggNDhTNzAuMDkxNCA4OCA0OCA4OCAyNSA3MC4wOTE0IDI1IDQ4UzI1LjkwODYgOCA0OCA4WiIgZmlsbD0iIzY2N2VlYSIvPgo8cGF0aCBkPSJNMzYgMzJMNjQgNDhMMzYgNjRWMzJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}
